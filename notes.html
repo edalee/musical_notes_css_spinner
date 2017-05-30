@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<head>
+    <title></title>
+
+    <style type="text/css">
+        .centre {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: auto;
+            border-top: 1px #f2f2f2 solid;
+            width: 150px;
+            height: 1px;
+            margin-top: 299px;
+        }
+
+        .note {
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            color: #ccc;
+            background: #ccc;
+            border-radius: 50%;
+            bottom:1px;
+            transform: translate( 0, 0) rotate(0deg);
+        }
+        .note:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 15px;
+            height: 15px;
+            bottom:-8px;
+            right: 0px;
+            border-right: 3px #ccc solid;
+            /*animation: grow 1s infinite;*/
+        }
+
+        .one {
+            margin-left: -30px;
+            animation: jump_one 1s infinite;
+            animation-delay: 50ms;
+        }        
+        .two {
+            margin-left: 0px;
+            animation: jump_two 1s infinite;
+            animation-delay: 300ms;
+        }
+        .three {
+            margin-left: 30px;
+            animation: jump_three 1s infinite;
+            animation-delay: 400ms;
+        }
+
+        .note.one:after {
+            height: 0px;
+            bottom: 10px;
+            animation: grow 1s infinite;
+            animation-delay: 50ms;
+        }
+        .note.two:after {
+            height: 0px;
+            top: 8px;
+            animation: grow 1s infinite;
+            animation-delay: 300ms;
+        }
+        .note.three:after {
+            height: 0px;
+            bottom: 9px;
+            animation: grow_three 1s infinite;
+            animation-delay: 400ms;
+        }
+        .note.three:before {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 9px;
+            height: 0px;
+            bottom:24px;
+            left: 11px;
+            transform: rotate(40deg);
+            border-radius: 10px;
+            border-top: 3px #ccc solid;
+            animation: grow_tail 1s infinite;
+        }
+
+        @keyframes jump_one {
+            0% {
+                transform: translate( 0, 0px) rotate(0deg); 
+            }
+            5% {
+                transform: translate( 0, 0px) rotate(0deg); 
+            }
+            40% {
+                transform: translate( 0, -16px) rotate(-35deg); 
+            }
+            60% {
+                transform: translate( 0, -16px) rotate(-35deg); 
+            }
+            100% {
+                transform: translate( 0px, 0) rotate(0deg); 
+            }
+        }        
+
+        @keyframes jump_two {
+            0% {
+                transform: translate( 0, 0px) rotate(0deg); 
+            }
+            5% {
+                transform: translate( 0, 0px) rotate(0deg); 
+            }
+            40% {
+                transform: translate( 0, -28px) rotate(40deg); 
+            }
+            55% {
+                transform: translate( 0, -28px) rotate(40deg); 
+            }
+            100% {
+                transform: translate( 0px, 0) rotate(0deg); 
+            }
+        }
+        
+        @keyframes jump_three {
+            0% {
+                transform: translate( 0, 0px) rotate(0deg); 
+            }
+            5% {
+                transform: translate( 0, 0px) rotate(0deg); 
+            }
+            40% {
+                transform: translate( 0, -20px) rotate(40deg); 
+            }
+            55% {
+                transform: translate( 0, -20px) rotate(40deg); 
+            }
+            100% {
+                transform: translate( 0px, 0) rotate(0deg); 
+            }
+        }
+
+        @keyframes grow {
+            0% {
+                height: 0; 
+            }
+            3% {
+                height: 0; 
+            }
+            50% {
+                height: 15px;
+            }
+            70% {
+                height: 0px;
+            }
+            100% {
+                height:0; 
+            }
+        }
+        @keyframes grow_three {
+            0% {
+                height: 0; 
+            }
+            3% {
+                height: 0; 
+            }
+            45% {
+                height: 17px;
+            }
+            55% {
+                height: 17px;
+            }
+            70% {
+                height: 0px;
+            }
+            100% {
+                height:0; 
+            }
+        }
+        @keyframes grow_tail {
+            0% {
+                width: 0; 
+            }
+            50% {
+                width: 0;
+            }
+            60% {
+                width: 0px;
+            }
+            77% {
+                width: 9px;
+            }
+            84% {
+                width: 9px;
+            }
+            100% {
+                width:0; 
+            }
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+    <div class="centre">
+        <div class="note one"></div>
+        <div class="note two"></div>
+        <div class="note three"></div>
+    </div>
+</body>
+</html>
